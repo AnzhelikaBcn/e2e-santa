@@ -25,6 +25,7 @@ describe("user can create a box and run it", () => {
   let currency = "Евро";
   let inviteLink;
 
+
   it("user logins and create a box", () => {
     cy.visit("/login");
     cy.login(users.userAutor.email, users.userAutor.password);
