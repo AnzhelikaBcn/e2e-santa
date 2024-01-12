@@ -119,7 +119,7 @@ describe("user can create a box and run it", () => {
     cy.clearCookies();
   });
 
-  it.only("draw", () => {
+  it("draw", () => {
     cy.visit("/login");
     cy.login(users.userAutor.email, users.userAutor.password);
     cy.get(
@@ -132,9 +132,11 @@ describe("user can create a box and run it", () => {
     cy.get('.picture-notice__hint > a > .base--clickable').click();
 
   });
-  
 
-  // Cypress._.times(4, () => {
+});
+
+
+// Cypress._.times(4, () => {
   //   describe("Description", () => {
   //     it.only('delete box', () => {
   //       cy.visit("/login");
@@ -177,6 +179,5 @@ describe("user can create a box and run it", () => {
   });
   */
 
-});
 
   
