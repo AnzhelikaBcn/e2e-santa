@@ -60,65 +60,32 @@ describe("user can create a box and run it", () => {
     cy.clearCookies();
   });
 
-  it("approve as user2", () => {
-    cy.visit(inviteLink);
-    cy.get(generalElements.submitButton).click();
-    cy.contains("войдите").click();
-    cy.login(users.user2.email, users.user2.password);
-    cy.contains("Создать карточку участника").should("exist");
-    cy.get(generalElements.submitButton).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeBoxPage.wishesInput).type(wishes);
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeDashboardPage.noticeForInvitee)
-      .invoke("text")
-      .then((text) => {
-        expect(text).to.contain("Это — анонимный чат с вашим Тайным Сантой");
-      });
-    cy.clearCookies();
-
+  [
+    { user: users.user2, wishes: "Пожелания для пользователя 2" },
+    { user: users.user3, wishes: "Пожелания для пользователя 3" },
+    { user: users.user4, wishes: "Пожелания для пользователя 4" },
+  ].forEach(({ user, wishes }) => {
+    it(`Подтверждение участия как ${user.username}`, () => {
+      cy.visit(inviteLink);
+      cy.get(generalElements.submitButton).click();
+      cy.contains("войдите").click();
+      cy.login(user.email, user.password);
+      cy.contains("Создать карточку участника").should("exist");
+      cy.get(generalElements.submitButton).click();
+      cy.get(generalElements.arrowRight).click();
+      cy.get(generalElements.arrowRight).click();
+      cy.get(inviteeBoxPage.wishesInput).type(wishes);
+      cy.get(generalElements.arrowRight).click();
+      cy.get(inviteeDashboardPage.noticeForInvitee)
+        .invoke("text")
+        .then((text) => {
+          expect(text).to.contain("Это — анонимный чат с вашим Тайным Сантой");
+        });
+      cy.clearCookies();
+    });
   });
 
-
-  it("approve as user3", () => {
-    cy.visit(inviteLink);
-    cy.get(generalElements.submitButton).click();
-    cy.contains("войдите").click();
-    cy.login(users.user3.email, users.user3.password);
-    cy.contains("Создать карточку участника").should("exist");
-    cy.get(generalElements.submitButton).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeBoxPage.wishesInput).type(wishes);
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeDashboardPage.noticeForInvitee)
-      .invoke("text")
-      .then((text) => {
-        expect(text).to.contain("Это — анонимный чат с вашим Тайным Сантой");
-      });
-    cy.clearCookies();
-  });
-
-  it("approve as user4", () => {
-    cy.visit(inviteLink);
-    cy.get(generalElements.submitButton).click();
-    cy.contains("войдите").click();
-    cy.login(users.user4.email, users.user4.password);
-    cy.contains("Создать карточку участника").should("exist");
-    cy.get(generalElements.submitButton).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeBoxPage.wishesInput).type(wishes);
-    cy.get(generalElements.arrowRight).click();
-    cy.get(inviteeDashboardPage.noticeForInvitee)
-      .invoke("text")
-      .then((text) => {
-        expect(text).to.contain("Это — анонимный чат с вашим Тайным Сантой");
-      });
-    cy.clearCookies();
-  });
-
+  
   it("draw", () => {
     cy.visit("/login");
     cy.login(users.userAutor.email, users.userAutor.password);
@@ -132,6 +99,7 @@ describe("user can create a box and run it", () => {
     cy.get('.picture-notice__hint > a > .base--clickable').click();
 
   });
+  
 
 });
 
