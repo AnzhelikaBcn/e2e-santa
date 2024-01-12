@@ -119,6 +119,19 @@ describe("user can create a box and run it", () => {
     cy.clearCookies();
   });
 
+  it.only("draw", () => {
+    cy.visit("/login");
+    cy.login(users.userAutor.email, users.userAutor.password);
+    cy.get(
+      '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account/boxes"] > .header-item > .header-item__text > .txt--med'
+    ).click();
+    cy.get(':nth-child(4) > a.base--clickable > .user-card').click({ force: true });
+    cy.get('a > .txt-secondary--med').click({ force: true });
+    cy.get('.btn-main').click();
+    cy.get('.santa-modal_content_buttons > .btn-main').click();
+    cy.get('.picture-notice__hint > a > .base--clickable').click();
+
+  });
   
 
   // Cypress._.times(4, () => {
