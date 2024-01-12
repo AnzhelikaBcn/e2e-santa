@@ -119,6 +119,7 @@ describe("user can create a box and run it", () => {
     cy.clearCookies();
   });
 
+  
 
   // Cypress._.times(4, () => {
   //   describe("Description", () => {
@@ -143,6 +144,7 @@ describe("user can create a box and run it", () => {
   //   });
   // });
 
+  /*
   after('delete box', () => {
     cy.visit("/login");
     cy.login(users.userAutor.email, users.userAutor.password);
@@ -160,6 +162,7 @@ describe("user can create a box and run it", () => {
 
 
   });
+  */
 
 });
 
