@@ -6,10 +6,16 @@
   "scripts": {
     "cy:run": "cypress run"
   },
+  "cypress": {
+    "integrationFolder": "cypress/e2e/tests"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@faker-js/faker": "^8.3.1",
-    "cypress": "^13.6.2"
+    "cypress": "^13.6.2",
+    "esbuild": "^0.19.11"
   }
 }
