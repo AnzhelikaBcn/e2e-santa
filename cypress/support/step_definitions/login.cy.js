@@ -1,11 +1,14 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import users from "../../fixtures/users.json";
-import boxPage from "../fixtures/pages/boxPage.json";
-import generalElements from "../fixtures/pages/general.json";
-import dashboardPage from "../fixtures/pages/dashboardPage.json";
-import invitePage from "../fixtures/pages/invitePage.json";
-import inviteeBoxPage from "../fixtures/pages/inviteeBoxPage.json";
-import inviteeDashboardPage from "../fixtures/pages/inviteeDashboardPage.json";
+import { Given } from "@badeball/cypress-cucumber-preprocessor";
+import { When } from "@badeball/cypress-cucumber-preprocessor";
+import { Then } from "@badeball/cypress-cucumber-preprocessor";
+
+const users = require("../fixtures/users.json");
+const boxPage = require("../fixtures/pages/boxPage.json");
+const generalElements = require("../fixtures/pages/general.json");
+const dashboardPage = require("../fixtures/pages/dashboardPage.json");
+const invitePage = require("../fixtures/pages/invitePage.json");
+const inviteeBoxPage = require("../fixtures/pages/inviteeBoxPage.json");
+const inviteeDashboardPage = require("../fixtures/pages/inviteeDashboardPage.json");
 import { faker } from "@faker-js/faker";
 
 let newBoxName, wishes, maxAmount, currency, inviteLink;
