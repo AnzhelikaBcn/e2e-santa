@@ -4,7 +4,14 @@
   "description": "",
   "main": "cypress.config.js",
   "scripts": {
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cy:run:cloud": "cypress run --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
+    "cy:spec1": "cypress run --spec 'cypress/e2e/tests/login.feature' --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
+    "cy:spec2": "cypress run --spec 'cypress/e2e/tests/login2.feature' --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
+    "cy:nokey:spec1": "cypress run --spec 'cypress/e2e/tests/login.feature'",
+    "cy:nokey:spec2": "cypress run --spec 'cypress/e2e/tests/login2.feature'",
+    "cy:nokey:parallel": "npm run cy:nokey:spec1 -- --browser chrome --parallel & pm run cy:nokey:spec2 -- --browser electron --parallel",
+    "cy:parallel": "npm run cy:spec1 -- --browser chrome --group chrome --ci-build-id 1 --parallel & pm run cy:spec2 -- --browser electron  --group electron --ci-build-id 1 --parallel"
   },
   "cypress": {
     "integrationFolder": "cypress/e2e/tests"
@@ -16,6 +23,8 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@faker-js/faker": "^8.3.1",
     "cypress": "^13.6.2",
-    "esbuild": "^0.19.11"
+    "esbuild": "^0.19.11",
+    "packag": "^0.0.15",
+    "package": "^1.0.1"
   }
 }

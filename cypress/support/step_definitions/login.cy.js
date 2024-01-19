@@ -2,7 +2,12 @@ import { Given } from "@badeball/cypress-cucumber-preprocessor";
 import { When } from "@badeball/cypress-cucumber-preprocessor";
 import { Then } from "@badeball/cypress-cucumber-preprocessor";
 
-const users = require("../../fixtures/users.json");
+//const package1 = require('../../package.json'); // Путь к вашему файлу package.json
+
+Given('I get the version from package.json', () => {
+  // Сохраняем версию в переменной окружения, чтобы использовать в тестах
+  Cypress.env('packageVersion', package1e.version);
+});
 
 Given("user is on secret santa login page", function () {
     cy.visit("/login");

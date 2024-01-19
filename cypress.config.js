@@ -6,6 +6,8 @@ const addCucumberPreprocessorPlugin =
 require ("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 
 module.exports = defineConfig({
+  projectID: 'tahm2o',
+  video: false,
   e2e: {
     baseUrl: "https://staging.lpitko.ru",
     testIsolation: false,

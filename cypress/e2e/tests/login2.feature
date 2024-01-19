@@ -7,7 +7,7 @@ Feature: User login on secret santa website
         Examples:
             | login                       | password |
             | angela.pikulina+1@gmail.com | test1111 |
-            | angela.pikulina+2@gmail.com | test1111 |
+            
            
     Scenario: User logs in successfully
         Given user is on secret santa login page
@@ -16,5 +16,4 @@ Feature: User login on secret santa website
         Examples:
             | login                       | password |
             | angela.pikulina+1@gmail.com | test1111 |
-            | angela.pikulina+2@gmail.com | test1111 |
-           
+            
