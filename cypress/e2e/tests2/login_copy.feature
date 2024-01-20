@@ -17,3 +17,4 @@ Feature: User login on secret santa website
             | login                       | password |
             | angela.pikulina+1@gmail.com | test1111 |
             
+           
