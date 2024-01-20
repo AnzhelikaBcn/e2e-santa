@@ -6,7 +6,7 @@ Feature: User login on secret santa website
         Then user is on dashboard page
         Examples:
             | login                       | password |
-            | angela.pikulina+1@gmail.com | test1111 |
+            | angela.pikulina+2@gmail.com | test1111 |
             
            
     Scenario: User logs in successfully
@@ -15,6 +15,6 @@ Feature: User login on secret santa website
         Then user is on dashboard page
         Examples:
             | login                       | password |
-            | angela.pikulina+1@gmail.com | test1111 |
+            | angela.pikulina+2@gmail.com | test1111 |
             
            
