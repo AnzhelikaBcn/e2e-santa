@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    environment {
+        BUILD_ID = "${BUILD_ID}"
+    }
+
+    stages {
+        stage('Run Parallel Tests') {
+            parallel {
+                stage('Chrome 13-inch') {
+                    steps {
+                        script {
+                            sh "npm run test:chrome:13inch -- --browser chrome --group chrome --ci-build-id ${BUILD_ID} --parallel"
+                        }
+                    }
+                }
+
+                stage('Electron 24-inch') {
+                    steps {
+                        script {
+                            sh "npm run test:electron:24inch -- --browser electron --group electron --ci-build-id ${BUILD_ID} --parallel"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
