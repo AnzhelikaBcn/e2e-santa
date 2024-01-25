@@ -6,6 +6,14 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout([$class: 'GitSCM', branches: [[name: 'BDD']]])
+                }
+            }
+        }
+
         stage('Run Parallel Tests') {
             parallel {
                 stage('Chrome 13-inch') {
