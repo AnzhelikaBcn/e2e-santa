@@ -11,17 +11,17 @@
     "cy:nokey:spec1": "cypress run --spec 'cypress/e2e/tests/login.feature'",
     "cy:nokey:spec2": "cypress run --spec 'cypress/e2e/tests/login2.feature'",
     "cy:nokey:parallel": "npm run cy:nokey:spec1 -- --browser chrome --parallel & npm run cy:nokey:spec2 -- --browser electron --parallel",
-    "cy:parallel": "npm run cy:spec1 -- --browser chrome --group chrome --ci-build-id 3 --parallel & npm run cy:spec2 -- --browser electron  --group electron --ci-build-id 3 --parallel",
+    "cy:parallel": "npm run cy:spec1 -- --browser chrome --group chrome --ci-build-id $BUILD_ID --parallel & npm run cy:spec2 -- --browser electron  --group electron --ci-build-id $BUILD_ID --parallel",
     "cy:tests": "cypress run --spec 'cypress/e2e/tests/**/*.feature' --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
     "cy:tests2": "cypress run --spec 'cypress/e2e/tests2/**/*.feature' --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
     "cy:nokey:tests": "cypress run --spec 'cypress/e2e/tests/**/*.feature'",
     "cy:nokey:tests2": "cypress run --spec 'cypress/e2e/tests2/**/*.feature'",
     "cy:all-tests": "cypress run --spec 'cypress/e2e/**/*.feature' --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f",
     "cy:nokey:parallelFolders": "npm run cy:nokey:tests -- --browser chrome --parallel & npm run cy:nokey:tests2 -- --browser electron --parallel",
-    "cy:parallelFolders": "npm run cy:tests -- --browser chrome --group chrome --ci-build-id 7 --parallel & npm run cy:tests2 -- --browser electron  --group electron --ci-build-id 7 --parallel",
+    "cy:parallelFolders": "npm run cy:tests -- --browser chrome --group chrome --ci-build-id $BUILD_ID --parallel & npm run cy:tests2 -- --browser electron  --group electron --ci-build-id $BUILD_ID --parallel",
     "test:chrome:13inch": "CYPRESS_13INCH=true cypress run --config-file cypress.config.js --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f --spec 'cypress/e2e/tests/**/*.feature'",
     "test:electron:24inch": "CYPRESS_24INCH=true cypress run --config-file cypress.config.js --record --key 95c75135-4e32-4ca4-a5ec-abc7c199251f --spec 'cypress/e2e/tests2/**/*.feature'",
-    "cy:parallelFolders13_24": "npm run test:chrome:13inch -- --browser chrome --group chrome --ci-build-id 6 --parallel & npm run test:electron:24inch -- --browser electron  --group electron --ci-build-id 6 --parallel"
+    "cy:parallelFolders13_24": "npm run test:chrome:13inch -- --browser chrome --group chrome --ci-build-id $BUILD_ID --parallel & npm run test:electron:24inch -- --browser electron  --group electron --ci-build-id $BUILD_ID --parallel"
   },
   "cypress": {
     "integrationFolder": "cypress/e2e/tests"

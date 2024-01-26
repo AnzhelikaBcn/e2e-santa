@@ -9,6 +9,7 @@ module.exports = defineConfig({
   projectId: 'tahm2o',
   video: false,
   env: {
+    "BUILD_ID": "default_build_d",
     "13inch": {
       "viewportWidth": 1366,
       "viewportHeight": 768,
