@@ -18,8 +18,12 @@ module.exports = defineConfig({
     "24inch": {
       "viewportWidth": 1920,
       "viewportHeight": 1080,
-      "browser": "electrone"
+      "browser": "electron"
     },
+  },
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json'
   },
   e2e: {
     baseUrl: "https://staging.lpitko.ru",

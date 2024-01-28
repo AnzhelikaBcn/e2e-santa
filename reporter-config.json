@@ -1,0 +1,7 @@
+{
+    "reporters": {
+      "allure": {
+        "outputDir": "allure-results"
+      }
+    }
+  }
